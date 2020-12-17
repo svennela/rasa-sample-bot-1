@@ -27,6 +27,6 @@ docker run -v $(pwd):/app rasa/rasa:${RASA_VERSION} run actions --actions action
 docker-compose up app -d
 docker run -it -v $(pwd):/app rasa/rasa:${RASA_VERSION} shell --debug
 
-
+ 
 
 Run rasa server with action server in docker
