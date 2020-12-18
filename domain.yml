@@ -11,6 +11,8 @@ intents:
   - help
   - smiley
   - violence
+  - ask_eat_healthy
+  - ask_exercise
 
 entities:
 - object
@@ -76,6 +78,12 @@ responses:
   
   utter_emoticons:
   - text: You're really emotional  
+  utter_stress_info:
+  - text: It's ok to feel overwhelmed at time. Try to set realistic expectaions and exercise time management techniques, like dividing large tasks into more manageable pieces. Relaxation techniques, like deep breadthing and meditation, can also be beneficial.
+  utter_exercise_info:
+  - text: 'Most healthy adults should aim to get about 150 min of moderate exercise per week. This includes activities like a brisk walk or yard work. '
+  utter_diet_info:
+  - text: A healthy diet includes fruits and vegetables, whole grains, dairy, lean protein, and plant-based fats. While there is room in a healthy diet for treates , added sugar should be eaten sparingly. Aim for variety of foods, and balance.
 
 session_config:
   session_expiration_time: 60
