@@ -50,6 +50,19 @@ nlu:
     - no way
     - not really
 
+- intent: mood_joke
+  examples: |
+    - joke
+    - funny
+
+- intent: search_provider
+  examples: |
+    - i need a [hospital](facility_type)
+    - find me a nearby [hospital](facility_type)
+    - [hospital](facility_type)
+
+
+
 - intent: mood_great
   examples: |
     - perfect
@@ -128,6 +141,12 @@ nlu:
     - Is walking once a day enough exercise?
     - How much exercise should I do every day?
     - How many times per week should I go to the gym?
+
+- intent: login
+  examples: |
+    - my email is [sridhar.vennela@gmail.com]{"entity": "email"}
+    - email [sridhar.vennela@gmail.com]{"entity": "email"}
+   
 - intent: affirm
   examples: |
     - yep

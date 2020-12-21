@@ -6,6 +6,7 @@ intents:
   - affirm
   - deny
   - mood_great
+  - mood_joke
   - mood_unhappy
   - bot_challenge
   - help
@@ -13,12 +14,21 @@ intents:
   - violence
   - ask_eat_healthy
   - ask_exercise
+  - ask_lower_stress
 
 entities:
 - object
 - cuisine
 - email
 - location
+- facility_type
+
+forms:
+  login_form:
+    email:
+    - type: from_entity
+      entity: email
+      intent: login
 slots:
   cuisine:
     type: categorical
@@ -31,12 +41,23 @@ slots:
     - thai
     - north indian
     - __other__
+  requirements:
+    type: any
+ 
+
   email:
     type: text
-    influence_conversation: true
+    influence_conversation: false
+  user_id:
+    type: text
+    influence_conversation: true    
   location:
     type: text
     influence_conversation: true
+  facility_type:
+    type: text
+  address:
+    type: text       
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -84,6 +105,14 @@ responses:
   - text: 'Most healthy adults should aim to get about 150 min of moderate exercise per week. This includes activities like a brisk walk or yard work. '
   utter_diet_info:
   - text: A healthy diet includes fruits and vegetables, whole grains, dairy, lean protein, and plant-based fats. While there is room in a healthy diet for treates , added sugar should be eaten sparingly. Aim for variety of foods, and balance.
+  utter_how_can_i_help:
+    - text: "Hello, I am a medicare locator, I can help you find the nearest hospital. How can I help ??"
+    - text: "Hi, My name is medicare locator. How can i help you today ??"
+actions:
+  - action_login_user
+  - action_greeting
+  - action_joke
+  - action_facility_search
 
 session_config:
   session_expiration_time: 60
